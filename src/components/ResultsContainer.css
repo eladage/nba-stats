@@ -1,0 +1,4 @@
+.ResultsContainer {
+  display: flex;
+  flex-direction: row;
+}

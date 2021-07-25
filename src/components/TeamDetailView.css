@@ -1,0 +1,12 @@
+.TeamDetailView {
+  /* display: flex; */
+  flex-direction: column;
+  /* padding: 10px; */
+  height: 200px;
+  width: 100%;
+  align-items: center;
+}
+
+.TeamLocationInfo {
+  display: flex;
+}
