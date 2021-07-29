@@ -1,4 +1,5 @@
-import logo from "./logo.svg";
+import nbaLogo from "./logos/nba-logo.png";
+import reactLogo from "./logos/react-logo.svg";
 import "./App.css";
 import ResultsContainer from "./components/ResultsContainer";
 
@@ -7,14 +8,11 @@ function App() {
     <>
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1>NBA teams</h1>
+          <img src={nbaLogo} className="NBA-logo" alt="logo" />
+          <img src={reactLogo} className="App-logo" alt="logo" />
         </header>
       </div>
       <ResultsContainer />
-      <div style={{ paddingTop: "20px", height: "50px", textAlign: "center" }}>
-        Made by Eric Ladage
-      </div>
     </>
   );
 }

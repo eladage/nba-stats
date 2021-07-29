@@ -4,9 +4,16 @@
   text-align: center;
 }
 
+.NBA-logo {
+  justify-content: space-between;
+  height: 50px;
+  pointer-events: none;
+  padding-left: 20px;
+}
+
 .App-logo {
   display: flex;
-  height: 10vmin;
+  height: 50px;
   pointer-events: none;
 }
 
@@ -18,11 +25,11 @@
 
 .App-header {
   background-color: #282c34;
-  height: 160px;
+  height: 100px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   font-size: calc(10px + 2vmin);
   color: white;
 }

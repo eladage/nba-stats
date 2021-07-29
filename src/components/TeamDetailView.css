@@ -1,4 +1,4 @@
-.TeamDetailView {
+.team-detail-view {
   /* display: flex; */
   flex-direction: column;
   /* padding: 10px; */
@@ -7,6 +7,10 @@
   align-items: center;
 }
 
-.TeamLocationInfo {
+.team-location-info {
   display: flex;
+}
+
+.team-logo {
+  height: 70px;
 }

@@ -1,28 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./ResultsContainer.css";
 import { headers } from "../common/constants";
-import TeamList from "./TeamList";
 import TeamDetailView from "./TeamDetailView";
 
 const ResultsContainer = () => {
-  const [teams, setTeams] = useState([]);
   const [games, setGames] = useState([]);
   const [season, setSeason] = useState("2020");
   const [selectedTeam, setSelectedTeam] = useState(null);
-
-  const fetchTeams = async () => {
-    try {
-      const response = await axios.get(
-        "https://free-nba.p.rapidapi.com/teams?page=0",
-        { headers }
-      );
-
-      setTeams(response.data.data);
-    } catch {
-      console.log("wtf");
-    }
-  };
 
   const fetchTeamGames = async (team, season) => {
     try {
@@ -42,10 +27,6 @@ const ResultsContainer = () => {
     }
   };
 
-  useEffect(() => {
-    fetchTeams();
-  }, []);
-
   const handleTeamClick = (team) => {
     setSelectedTeam(team);
     fetchTeamGames(team, season);
@@ -58,11 +39,11 @@ const ResultsContainer = () => {
 
   return (
     <div className="ResultsContainer">
-      <TeamList teams={teams} onSelectTeam={handleTeamClick} />
       <TeamDetailView
         team={selectedTeam}
         games={games}
         season={season}
+        onSelectTeam={handleTeamClick}
         onSelectSeason={handleSelectSeason}
       />
     </div>
