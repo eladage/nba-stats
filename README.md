@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# NBA Stats
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Simple little stats app for API practice
+
+![image](https://user-images.githubusercontent.com/9043655/127574292-b2264e5b-f308-46d1-8fcc-9fa6582dce40.png)
 
 ## Available Scripts
 
