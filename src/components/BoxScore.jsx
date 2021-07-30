@@ -1,5 +1,6 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
+import PlayerStats from "./PlayerStats";
 
 const BoxScore = ({ stats }) => {
   return (
@@ -19,19 +20,7 @@ const BoxScore = ({ stats }) => {
       </thead>
       <tbody>
         {stats.map((player) => (
-          <tr key={player.id}>
-            <td>{player.min}</td>
-            <td>{player.player.first_name}</td>
-            <td>{player.player.last_name}</td>
-            <td>{player.fgm}</td>
-            <td>{player.fga}</td>
-            <td>
-              {player.fga ? Math.floor((player.fgm / player.fga) * 100) : "--"}
-            </td>
-            <td>{player.ast}</td>
-            <td>{player.reb}</td>
-            <td>{player.pts}</td>
-          </tr>
+          <PlayerStats key={player.id} player={player} />
         ))}
       </tbody>
     </Table>

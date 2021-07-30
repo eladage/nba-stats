@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Accordion from "react-bootstrap/Accordion";
+import Spinner from "react-bootstrap/Spinner";
 import { headers } from "../common/constants";
 import BoxScore from "./BoxScore";
 
 const GameDetailView = ({ game, team }) => {
-  const [isOpen, setOpen] = useState(false);
   const [playerStats, setPlayerStats] = useState(null);
 
   const fetchPlayerStats = async () => {
@@ -15,7 +15,13 @@ const GameDetailView = ({ game, team }) => {
         { headers }
       );
 
-      setPlayerStats(response.data.data);
+      const sortedPlayerStats = response.data.data.sort((a, b) => {
+        return Number(a.min.split(":")[0]) > Number(b.min.split(":")[0])
+          ? -1
+          : 1;
+      });
+
+      setPlayerStats(sortedPlayerStats);
     } catch {
       console.log("wtf");
     }
@@ -29,7 +35,7 @@ const GameDetailView = ({ game, team }) => {
 
     const gameDisplay = isHomeTeam
       ? `${game.visitor_team.full_name} (${game.visitor_team_score} - ${game.home_team_score})`
-      : `@ ${game.visitor_team.full_name} (${game.visitor_team_score} - ${game.home_team_score})`;
+      : `@ ${game.home_team.full_name} (${game.visitor_team_score} - ${game.home_team_score})`;
 
     if ((isHomeTeam && didHomeTeamWin) || (!isHomeTeam && !didHomeTeamWin)) {
       return (
@@ -52,19 +58,25 @@ const GameDetailView = ({ game, team }) => {
     if (!playerStats) {
       fetchPlayerStats();
     }
-
-    setOpen(!isOpen);
   };
 
   return (
     <Accordion.Item eventKey={game.id} onClick={handleGameDetailsClick}>
       <Accordion.Header>{getGameDisplay()}</Accordion.Header>
       <Accordion.Body>
-        {game.date.split("T")[0]}
+        <h4 style={{ textAlign: "center" }}>
+          {new Date(game.date).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+        </h4>
         {playerStats ? (
           <BoxScore stats={playerStats} />
         ) : (
-          <div id="loading-player-stats">Loading...</div>
+          <Spinner className="loading-spinner" animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
         )}
       </Accordion.Body>
     </Accordion.Item>

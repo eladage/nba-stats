@@ -14,3 +14,17 @@
 .team-logo {
   height: 70px;
 }
+
+.team-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+  resize: vertical;
+  overflow: auto;
+  text-align: center;
+}
+
+.loading-spinner {
+  margin: 20px;
+}

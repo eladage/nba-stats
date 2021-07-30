@@ -13,7 +13,7 @@ const ResultsContainer = () => {
     try {
       setGames([]);
       const response = await axios.get(
-        `https://free-nba.p.rapidapi.com/games?seasons[]=${season}&team_ids[]=${team.id}&per_page=82&page=0"`,
+        `https://free-nba.p.rapidapi.com/games?seasons[]=${season}&team_ids[]=${team.id}&per_page=150&page=0"`,
         { headers }
       );
 
