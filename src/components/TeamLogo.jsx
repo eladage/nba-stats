@@ -5,7 +5,7 @@ const TeamLogo = ({ team }) => {
     <img
       src={`images/${team.name.toLowerCase().replace(" ", "-")}.png`}
       alt={team.full_name}
-      style={{ height: "80px", paddingRight: "40px" }}
+      style={{ height: "100px", paddingRight: "40px" }}
     />
   );
 };

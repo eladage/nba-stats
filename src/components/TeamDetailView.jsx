@@ -46,7 +46,9 @@ const TeamDetailView = ({
       <>
         <Navbar variant="dark" bg="dark" expand="sm">
           <Container fluid>
-            <Navbar.Brand>
+            <Navbar.Brand
+              style={{ fontSize: "30px", fontFamily: "Bebas Neue" }}
+            >
               {team ? `${team.full_name} (${season})` : ""}
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbar-dark-example" />
@@ -122,6 +124,7 @@ const TeamDetailView = ({
                   ? team.colors.color_3
                   : team.colors.color_2,
                 color: team.colors.color_1,
+                fontFamily: "Bebas Neue",
               }}
             >
               Games

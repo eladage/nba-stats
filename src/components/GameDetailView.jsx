@@ -34,14 +34,17 @@ const GameDetailView = ({ game, team }) => {
     const loserText = <div style={{ color: "red", paddingLeft: "5px" }}>L</div>;
 
     const gameDisplay = isHomeTeam
-      ? `${game.visitor_team.full_name} (${game.visitor_team_score} - ${game.home_team_score})`
-      : `@ ${game.home_team.full_name} (${game.visitor_team_score} - ${game.home_team_score})`;
+      ? `${game.visitor_team.full_name} (${game.visitor_team_score} - ${
+          game.home_team_score
+        })${game.postseason ? " *" : ""}`
+      : `@ ${game.home_team.full_name} (${game.visitor_team_score} - ${
+          game.home_team_score
+        })${game.postseason ? " *" : ""}`;
 
     if ((isHomeTeam && didHomeTeamWin) || (!isHomeTeam && !didHomeTeamWin)) {
       return (
         <>
           <div>{gameDisplay}</div>
-          <div></div>
           {dubText}
         </>
       );

@@ -25,8 +25,8 @@ export const teams = [
     name: "Celtics",
     colors: {
       color_1: "#007A33",
-      color_2: "#BA9653",
-      color_3: "#963821",
+      color_2: "#963821",
+      color_3: "#BA9653",
       color_4: null,
       color_5: null,
     },

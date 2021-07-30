@@ -8,8 +8,8 @@ function App() {
     <>
       <div className="App">
         <header className="App-header">
-          <img src={nbaLogo} className="NBA-logo" alt="logo" />
-          <img src={reactLogo} className="App-logo" alt="logo" />
+          <img src={nbaLogo} className="NBA-logo" alt="nba-logo" />
+          <img src={reactLogo} className="App-logo" alt="react-logo" />
         </header>
       </div>
       <ResultsContainer />
