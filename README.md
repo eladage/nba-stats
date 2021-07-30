@@ -2,7 +2,7 @@
 
 Simple little stats app for API practice
 
-![image](https://user-images.githubusercontent.com/9043655/127574292-b2264e5b-f308-46d1-8fcc-9fa6582dce40.png)
+![image](https://user-images.githubusercontent.com/9043655/127591803-7c5544d6-1353-460b-a701-ae8d60df67ac.png)
 
 ## Available Scripts
 
